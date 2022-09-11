@@ -8,17 +8,17 @@ const Home = () => {
     <Container>
       <Header />
       <Section
-        title={"Model S"}
+        title={"Model 3"}
         description="Order Online for Touchless Delivery"   
-        backgroundImg="model-s.jpg"
+        backgroundImg="model-3.jpg"
         leftBtnTxt="Custom Order"
         rightBtnTxt="Existing Inventory"
 
       />
       <Section
-        title={"Model 3"}
+        title={"Model S"}
         description="Order Online for Touchless Delivery"   
-        backgroundImg="model-3.jpg"
+        backgroundImg="model-s.jpg"
         leftBtnTxt="Custom Order"
         rightBtnTxt="Existing Inventory"
 
@@ -68,5 +68,4 @@ export default Home
 
 const Container = styled.div`
   height:100vh;
-
 `

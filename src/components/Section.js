@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Fade } from "react-awesome-reveal";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const Section = (props) => {
   return (
@@ -22,7 +23,7 @@ const Section = (props) => {
                     </RightButton>}
                 </ButtonGroup>
             </Fade>
-            <DownArrow src = "/images/down-arrow.svg" />
+            <DownArrow  />
         </Buttons>
        
     </Wrap>
@@ -47,7 +48,16 @@ const Wrap = styled.div`
 const ItemText = styled.div`
     padding-top: 15vh;
     text-align: center;
-   
+    h1{
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+    p{
+        font-size: 16px;
+        font-family: sans-serif;
+        margin-top: 10px;
+    }
 `
 const ButtonGroup = styled.div`
     display: flex;
@@ -64,20 +74,19 @@ const LeftButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 100px;
-    opacity: 0.85;
-    text-transform: uppercase;
-    font-size: 12px;
+    border-radius: 5px;
+    font-size: 15px;
     cursor: pointer;
     margin: 8px;
+    font-family: sans-serif;
+    font-weight: bold;
 `
 const RightButton = styled(LeftButton)`
     background-color: white;
     opacity:0.65;
     color:black;
 `
-const DownArrow = styled.img`
-    height: 40px;
+const DownArrow = styled(KeyboardArrowDownIcon)`
     animation: animateDown infinite 1.5s;
     overflow-x: hidden;
 `
