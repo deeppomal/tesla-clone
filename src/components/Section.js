@@ -23,7 +23,7 @@ const Section = (props) => {
                     </RightButton>}
                 </ButtonGroup>
             </Fade>
-            <DownArrow  />
+            {props.isDownArrow && <DownArrow  />}
         </Buttons>
        
     </Wrap>
@@ -91,5 +91,7 @@ const DownArrow = styled(KeyboardArrowDownIcon)`
     overflow-x: hidden;
 `
 const Buttons = styled.div`
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `

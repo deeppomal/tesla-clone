@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Footer from './Footer';
 import Header from './Header';
 import Section from './Section';
 
@@ -13,7 +14,7 @@ const Home = () => {
         backgroundImg="model-3.jpg"
         leftBtnTxt="Custom Order"
         rightBtnTxt="Existing Inventory"
-
+        isDownArrow={true}
       />
       <Section
         title={"Model S"}
@@ -21,7 +22,7 @@ const Home = () => {
         backgroundImg="model-s.jpg"
         leftBtnTxt="Custom Order"
         rightBtnTxt="Existing Inventory"
-
+        isDownArrow={true}
       />
       <Section
         title={"Model X"}
@@ -29,7 +30,7 @@ const Home = () => {
         backgroundImg="model-x.jpg"
         leftBtnTxt="Custom Order"
         rightBtnTxt="Existing Inventory"
-
+        isDownArrow={true}
       />
       <Section
         title={"Model Y"}
@@ -37,7 +38,7 @@ const Home = () => {
         backgroundImg="model-y.jpg"
         leftBtnTxt="Custom Order"
         rightBtnTxt="Existing Inventory"
-
+        isDownArrow={true}
       />
        <Section
         title={"Solar Panels"}
@@ -45,7 +46,7 @@ const Home = () => {
         backgroundImg="solar-panel.jpg"
         leftBtnTxt="Order Now"
         rightBtnTxt="Learn More"
-
+        isDownArrow={true}
       />
       <Section
         title={"Solar Roof"}
@@ -53,13 +54,15 @@ const Home = () => {
         backgroundImg="solar-roof.jpg"
         leftBtnTxt="Order Now"
         rightBtnTxt="Learn More"
-
+        isDownArrow={true}
       />
       <Section
         title={"Accessories"}
         backgroundImg="accessories.jpg"
         leftBtnTxt="Shop Now"
+        isDownArrow={false}
       />
+      <Footer />
     </Container>
   )
 }

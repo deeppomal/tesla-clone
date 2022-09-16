@@ -2,32 +2,40 @@ import React,{useState} from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { Fade } from "react-awesome-reveal";
 import {selectCars} from '../features/car/carSlice';
 import {useSelector} from 'react-redux'; 
 import LanguageIcon from '@mui/icons-material/Language';
+import {Link} from 'react-router-dom';
 
 function Header() {
   const [burgerStatus,setBurgerStatus]=useState(false);
   const cars = useSelector(selectCars);
   return (
     <Container>
-      <a>
-        <img src='/images/logo.svg' />
-      </a>
+      <Link to={'/'}>
+        <a>
+          <img src='/images/logo.svg' />
+        </a>
+      </Link>
       <Menu>
         {
           cars && cars.map((car,index)=>{
-            return <a href="#" key={index}>{car}</a>
+            return <Link to={car =='Model 3' ? '/model3':'/'} ><a href="#" key={index}>{car}</a></Link> 
           })
         }
         <a href="#" >Solar Roof</a>
         <a href="#" >Solar Panels</a>
       </Menu>
       <RightMenu>
+        <MenuSubGroup>
         <a href="#">Shop</a>
         <a href="#">Account</a>
         <a href="#" onClick={()=>setBurgerStatus(true)}>Menu</a>
+        </MenuSubGroup>
+        <MenuBtn>
+          <p onClick={()=>setBurgerStatus(true)}>Menu</p>
+        </MenuBtn>
+        
         {/* <CustomMenu onClick={()=>setBurgerStatus(true)} /> */}
       </RightMenu>
       <BurgerNav show={burgerStatus}>
@@ -63,6 +71,26 @@ function Header() {
 
 export default Header
 
+const MenuBtn = styled.div`
+  padding: 5px 15px;
+  border-radius: 4px;
+  background-color: rgba(239, 239, 240,0.2);
+  p {
+      font-size: 15px;
+      font-family: sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  @media (min-width: 1056px){
+    display: none;
+  }
+`
+const MenuSubGroup = styled.div`
+  @media (max-width: 1056px){
+    display: none;
+  }
+ 
+`
 const Container = styled.div`
   min-height: 50px;
   position: fixed;
@@ -92,7 +120,7 @@ const Menu = styled.div`
     font-family: sans-serif;
     font-weight: bold;
   }
-  @media (max-width:768px) {
+  @media (max-width:1056px) {
     display: none;
   }
 `
