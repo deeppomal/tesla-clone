@@ -7,26 +7,26 @@ import {useSelector} from 'react-redux';
 import LanguageIcon from '@mui/icons-material/Language';
 import {Link} from 'react-router-dom';
 
-function Header() {
+function Header(props) {
   const [burgerStatus,setBurgerStatus]=useState(false);
   const cars = useSelector(selectCars);
   return (
-    <Container>
+    <Container isPositionFixed={props.isPositionFixed} >
       <Link to={'/'}>
         <a>
           <img src='/images/logo.svg' />
         </a>
       </Link>
-      <Menu>
+      <Menu txtColor={props.txtColor}>
         {
           cars && cars.map((car,index)=>{
-            return <Link to={car =='Model 3' ? '/model3':'/'} ><a href="#" key={index}>{car}</a></Link> 
+            return <Link key={index} to={car =='Model 3' ? '/model3':'/'} ><a href="#" key={index}>{car}</a></Link> 
           })
         }
         <a href="#" >Solar Roof</a>
         <a href="#" >Solar Panels</a>
       </Menu>
-      <RightMenu>
+      <RightMenu txtColor={props.txtColor}>
         <MenuSubGroup>
         <a href="#">Shop</a>
         <a href="#">Account</a>
@@ -92,8 +92,8 @@ const MenuSubGroup = styled.div`
  
 `
 const Container = styled.div`
-  min-height: 50px;
-  position: fixed;
+  height: 60px;
+  position: ${props=>props.isPositionFixed && 'fixed'};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -105,7 +105,8 @@ const Container = styled.div`
   img{
     height: 15px;
     width: 100px;
-  }
+  };
+  
 `
 const Menu = styled.div`
   display: flex;
@@ -119,6 +120,7 @@ const Menu = styled.div`
     font-size: 15px;
     font-family: sans-serif;
     font-weight: bold;
+    color: ${props=>props.txtColor && '#fff'};
   }
   @media (max-width:1056px) {
     display: none;
@@ -132,6 +134,7 @@ const RightMenu = styled.div`
       font-family: sans-serif;
       font-weight: bold;
       margin-left: 15px;
+      color: ${props=>props.txtColor && '#fff'};
     }
 `
 const CustomMenu = styled(MenuIcon)`

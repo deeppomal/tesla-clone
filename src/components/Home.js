@@ -7,7 +7,7 @@ import Section from './Section';
 const Home = () => {
   return (
     <Container>
-      <Header />
+      <Header isPositionFixed={true} />
       <Section
         title={"Model 3"}
         description="Order Online for Touchless Delivery"   

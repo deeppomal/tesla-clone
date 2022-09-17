@@ -7,7 +7,7 @@ import Model3 from '../components/Model3';
 const ModelThree = () => {
   return (
     <Container>
-      <Header />
+      <Header txtColor={'#fff'}  isPositionFixed={false} />
         <Model3 />
       <Footer />
     </Container>
