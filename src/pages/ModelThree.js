@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import AWD from '../components/AWD';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Model3 from '../components/Model3';
@@ -9,6 +10,7 @@ const ModelThree = () => {
     <Container>
       <Header txtColor={'#fff'}  isPositionFixed={false} />
         <Model3 />
+        <AWD />
       <Footer />
     </Container>
   )
