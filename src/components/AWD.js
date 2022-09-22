@@ -77,7 +77,6 @@ const CustomText = styled.h3`
         width: 70%;
         text-align: center;
     }
-    
 `
 const RespContent = styled.div`
     display: none;
